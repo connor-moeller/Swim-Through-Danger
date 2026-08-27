@@ -29,3 +29,4 @@
 - Refined hooks into J-shaped hazards where only the curved bottom tip can catch Goldie.
 - Reduced food frequency to one appearance roughly every 18-30 seconds.
 - Aligned each fishing line exactly with the vertical stem of its J-shaped hook.
+- Added a GitHub Pages workflow to serve `index.html` as the live game site from the `main` branch.
