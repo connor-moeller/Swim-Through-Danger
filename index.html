@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#082f49" />
+  <title>Swim Through Danger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <div>
+          <p class="kicker">DEEP CURRENT // 07</p>
+          <h1>Swim Through Danger</h1>
+        </div>
+      </div>
+      <div class="scoreboard" aria-label="Game score">
+        <div><span class="metric-label">DISTANCE</span><strong id="score">0000</strong></div>
+        <div><span class="metric-label">BEST</span><strong id="best">0000</strong></div>
+      </div>
+    </header>
+
+    <section class="game-wrap">
+      <div class="game-meta">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">CURRENT IS CALM</span>
+        <span class="powerup-hud hidden" id="powerupHud">BOOST <b id="powerupTimer">5.0</b>s</span>
+        <span class="meta-divider"></span>
+        <span>ARROWS TO DIVE / RISE</span>
+      </div>
+      <div class="canvas-frame">
+        <canvas id="gameCanvas" width="960" height="600" aria-label="Swim Through Danger game area"></canvas>
+        <div class="overlay" id="instructionOverlay">
+          <span class="overlay-tag">FIELD NOTE 000</span>
+          <h2>Know the current.</h2>
+          <p>Guide Goldie through open water. Rival fish face you head-on, and seaweed is dangerous only where it grows.</p>
+          <div class="instruction-list">
+            <span><kbd>↑</kbd><kbd>↓</kbd> swim up or down</span>
+            <span><kbd>SPACE</kbd> pause the current</span>
+          </div>
+          <button id="instructionButton" type="button">Understood <span>→</span></button>
+        </div>
+        <div class="overlay hidden" id="startOverlay">
+          <span class="overlay-tag">FIELD NOTE 001</span>
+          <h2>Find the clear water.</h2>
+          <p>Navigate the goldfish through the reef. Currents never stop.</p>
+          <button id="startButton" type="button">Start swimming <span>→</span></button>
+        </div>
+        <div class="overlay hidden" id="gameOverOverlay">
+          <span class="overlay-tag danger-tag">CONTACT DETECTED</span>
+          <div class="new-record hidden" id="newRecord">NEW RECORD</div>
+          <h2>The reef wins this round.</h2>
+          <p>You covered <strong id="finalScore">0</strong> meters. Record distance: <strong id="recordDistance">0</strong> meters.</p>
+          <p class="retry-copy">Take another run?</p>
+          <button id="restartButton" type="button">Swim again <span>↻</span></button>
+        </div>
+      </div>
+      <div class="control-strip">
+        <span class="key-hint"><kbd>↑</kbd><kbd>↓</kbd> steer</span>
+        <span class="control-note">watch the gaps between the coral</span>
+        <span class="key-hint"><kbd>SPACE</kbd> pause</span>
+      </div>
+    </section>
+
+    <footer class="footer-note">
+      <span>GOLDIE // CLASS: FEARLESS</span>
+      <span>SEA STATE: <b id="seaState">RISING</b></span>
+      <span>MADE FOR THE BRAVE</span>
+    </footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
